@@ -55,15 +55,17 @@ while True:
                 print("You lost! Better Luck Next Time :)")
                 status = "lost"
                 print("Here's a quote for you:", random.choice(losingQuotes))
+                break
             else: 
                 pass
-    if status == "lost" or status == "win":
-        consent = str(input("Would you like to replay? (y/n): "))
-        if consent == "y" or consent == "Y":
-            print("Great! Let's start again")
-            pass
-        elif consent == "N" or consent == "n":
-            print("Oh! Sad :(")
-            break
-        else:
-            print("Please either choose Y or N")
+    while True:
+        if status == "lost" or status == "win":
+            consent = str(input("Would you like to replay? (y/n): "))
+            if consent == "y" or consent == "Y":
+                print("Great! Let's start again")
+                break
+            elif consent == "N" or consent == "n":
+                print("Oh! Sad :(")
+                exit()
+            else:
+                print("Please either choose Y or N")
