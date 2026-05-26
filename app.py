@@ -14,3 +14,23 @@ else:
 
 print(result)
 
+userGuess = ""
+tries = 1
+
+while userGuess != result:
+    userGuess = int(input(f"""Try Number: {tries}
+Guess: """))
+    if userGuess > upperBound or userGuess < lowerBound:
+        print("Your guess is either below Lower Bound or above Upper Bound. Please try again")
+    else:
+        if userGuess == result:
+            print(f"You won at try number: {tries}")
+            break
+        else:
+            pass
+        tries += 1
+        if tries == 11:
+            print("You lost! Better Luck Next Time :)")
+            break
+        else: 
+            pass
