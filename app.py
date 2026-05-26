@@ -10,10 +10,12 @@ while True:
     upperBound = int(input("Enter the upper bound for the random number I have to generate: "))
     lowerBound = int(input("Enter the lower bound for the random number I have to generate: "))
 
-    if lowerBound >= upperBound:
-        result = "Lower Bound should be lower than the Upper Bound. Please try again :("
-    else:
-        result = random.randrange(lowerBound, upperBound, 1)
+    while lowerBound >= upperBound:
+        print("Lower Bound should be lower than the Upper Bound. Please try again :(")
+        upperBound = int(input("Enter the upper bound for the random number I have to generate: "))
+        lowerBound = int(input("Enter the lower bound for the random number I have to generate: "))
+    
+    result = random.randint(lowerBound, upperBound)
 
     userGuess = ""
     tries = 1
