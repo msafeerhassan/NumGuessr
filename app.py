@@ -4,6 +4,7 @@ import random
 
 userName = str(input("Hey! What's your name: "))
 status = ""
+bestScore = 20
 while True:
     print(f"Welcome, {userName}. Good Luck!")
     upperBound = int(input("Enter the upper bound for the random number I have to generate: "))
@@ -30,6 +31,11 @@ while True:
             if userGuess == result:
                 print(f"You won at try number: {tries}")
                 status = "win"
+                if tries < bestScore:
+                    bestScore = tries
+                    print(f"This is your best score with only {bestScore} tries.")
+                else:
+                    pass
                 print("Here's a quote for you:", random.choice(winningQuotes))
                 break
             else:
