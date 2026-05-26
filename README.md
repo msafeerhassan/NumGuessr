@@ -22,4 +22,4 @@ Simply, run the .exe (execution) file for running the program. If it fails, open
 
 ### Screenshots:
 
-https://cdn.hackclub.com/019e63ba-6e30-7f17-822d-3f1ac066d4a1/image.png
+![Working Screenshot](https://cdn.hackclub.com/019e63ba-6e30-7f17-822d-3f1ac066d4a1/image.png)
