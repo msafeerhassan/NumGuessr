@@ -12,8 +12,6 @@ if lowerBound >= upperBound:
 else:
     result = random.randrange(lowerBound, upperBound, 1)
 
-print(result)
-
 userGuess = ""
 tries = 1
 
@@ -27,7 +25,10 @@ Guess: """))
             print(f"You won at try number: {tries}")
             break
         else:
-            pass
+            if userGuess > result:
+                print("Hmm... maybe a smaller number would work")
+            else:
+                print("Hmm... maybe a bigger number would work")
         tries += 1
         if tries == 11:
             print("You lost! Better Luck Next Time :)")
