@@ -15,6 +15,10 @@ else:
 userGuess = ""
 tries = 1
 
+winningQuotes = ["You were born to win, but to be a winner, you must plan to win, prepare to win, and expect to win.", "The difference between a successful person and others is not a lack of knowledge, but a lack of will.", "If you think you can win, you can win. Faith is necessary to victory.", "Victory belongs to the most persevering.", "Never dream about success, work for it.", "You have to win; they don't necessarily have to lose for you!", "Be bigger than your excuses."]
+
+losingQuotes = ["Success is a lousy teacher. It seduces smart people into thinking they can’t lose.", "We must accept finite disappointment, but never lose infinite hope.", "Sometimes by losing a battle you find a new way to win the war.", "It is worth remembering that the time of greatest gain in terms of wisdom and inner strength is often that of greatest difficulty.", "Sometimes you must lose everything to gain it again, and the regaining is the sweeter for the pain of loss."]
+
 while userGuess != result:
     userGuess = int(input(f"""Try Number: {tries}
 Guess: """))
@@ -23,15 +27,22 @@ Guess: """))
     else:
         if userGuess == result:
             print(f"You won at try number: {tries}")
+            print("Here's a quote for you:", random.choice(winningQuotes))
             break
         else:
-            if userGuess > result:
-                print("Hmm... maybe a smaller number would work")
+            diff = result - userGuess
+            if diff <= 5 and diff >= -5:
+                print("You are very close")
+            elif diff <=10 and diff >= -10:
+                print("You are close.")
+            elif diff <= 20 and diff >= -20:
+                print("Somewhere close :)")
             else:
-                print("Hmm... maybe a bigger number would work")
+                print("POV: your whole bloodline watching you fail at guessing a number while they even guessed the enemy's correct move in war")
         tries += 1
-        if tries == 11:
+        if tries == 21:
             print("You lost! Better Luck Next Time :)")
+            print("Here's a quote for you:", random.choice(losingQuotes))
             break
         else: 
             pass
